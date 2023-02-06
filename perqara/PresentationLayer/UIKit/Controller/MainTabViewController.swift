@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-private let kSelectedTabTitle = "\u{25CF}"
-
 // MARK: LIFECYCLE AND CALLBACK
 extension Presentation.UiKit {
     class MainTabViewController: UITabBarController {
@@ -32,14 +30,9 @@ extension Presentation.UiKit {
         }
         
         override func viewWillAppear(_ animated: Bool) {
-               super.viewWillAppear(animated)
-               refreshTabItem()
-           }
-           
-           // UITabBarControllerDelegate method
-           func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-               print("Selected \(viewController.title!)")
-           }
+            super.viewWillAppear(animated)
+            refreshTabItem()
+        }
     }
 }
 
@@ -61,9 +54,7 @@ private extension Presentation.UiKit.MainTabViewController {
         // Update tab bar property
         tabBar.isTranslucent = false
         tabBar.tintColor = .systemBlue
-//        tabBar.unselectedItemTintColor = .systemBlue
-//        tabBar.barTintColor = .systemBlue
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = .lightGray.withAlphaComponent(0.1)
     }
 }
 
