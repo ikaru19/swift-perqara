@@ -40,6 +40,12 @@
 		80F3BD0329914FDB0007151E /* GetGameDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD0229914FDB0007151E /* GetGameDetailDataSource.swift */; };
 		80F3BD05299151F90007151E /* MyJsonAPI+GetGameDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD04299151F90007151E /* MyJsonAPI+GetGameDetailDataSource.swift */; };
 		80F3BD07299158510007151E /* DataDeveloperEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD06299158510007151E /* DataDeveloperEntity.swift */; };
+		80F3BD0A29915A140007151E /* NamespacePresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD0929915A140007151E /* NamespacePresentation.swift */; };
+		80F3BD0D29915A370007151E /* NamespaceUiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD0C29915A370007151E /* NamespaceUiKit.swift */; };
+		80F3BD1029915A680007151E /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD0F29915A680007151E /* MainTabViewController.swift */; };
+		80F3BD1229915DB10007151E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD1129915DB10007151E /* UIViewControllerExtensions.swift */; };
+		80F3BD1429915EC00007151E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD1329915EC00007151E /* HomeViewController.swift */; };
+		80F3BD1629915F2A0007151E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD1529915F2A0007151E /* FavoriteViewController.swift */; };
 		8FC2F17C34169BA050A984B3 /* Pods_perqara_perqaraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */; };
 		C40AE17A468C7E2205BD82A2 /* Pods_perqara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD5AAC7C5DFED3204A7E655 /* Pods_perqara.framework */; };
 		EC07ED0716EE042665F65791 /* Pods_perqaraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF8155DABDDAE7FD4D87ADC /* Pods_perqaraTests.framework */; };
@@ -105,6 +111,12 @@
 		80F3BD0229914FDB0007151E /* GetGameDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGameDetailDataSource.swift; sourceTree = "<group>"; };
 		80F3BD04299151F90007151E /* MyJsonAPI+GetGameDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyJsonAPI+GetGameDetailDataSource.swift"; sourceTree = "<group>"; };
 		80F3BD06299158510007151E /* DataDeveloperEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDeveloperEntity.swift; sourceTree = "<group>"; };
+		80F3BD0929915A140007151E /* NamespacePresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamespacePresentation.swift; sourceTree = "<group>"; };
+		80F3BD0C29915A370007151E /* NamespaceUiKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamespaceUiKit.swift; sourceTree = "<group>"; };
+		80F3BD0F29915A680007151E /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		80F3BD1129915DB10007151E /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		80F3BD1329915EC00007151E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		80F3BD1529915F2A0007151E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		9FD4F0742BD11A10E2D8ECC4 /* Pods-perqara-perqaraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqara-perqaraUITests.release.xcconfig"; path = "Target Support Files/Pods-perqara-perqaraUITests/Pods-perqara-perqaraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_perqara_perqaraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F455203AE66C730A16053EE6 /* Pods-perqaraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqaraTests.debug.xcconfig"; path = "Target Support Files/Pods-perqaraTests/Pods-perqaraTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +176,7 @@
 		807B3FEB29912FF20080B34D /* perqara */ = {
 			isa = PBXGroup;
 			children = (
+				80F3BD08299159FD0007151E /* PresentationLayer */,
 				80F3BCDE299139450007151E /* DataLayer */,
 				80F3BCC5299133110007151E /* Infrastructure */,
 				80F3BCBC299132870007151E /* DI */,
@@ -201,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				80F3BCBA2991319C0007151E /* Constans.swift */,
+				80F3BD1129915DB10007151E /* UIViewControllerExtensions.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -350,6 +364,34 @@
 				80F3BCC62991331C0007151E /* Alamofire */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		80F3BD08299159FD0007151E /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD0B29915A220007151E /* UIKit */,
+				80F3BD0929915A140007151E /* NamespacePresentation.swift */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		80F3BD0B29915A220007151E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD0E29915A590007151E /* Controller */,
+				80F3BD0C29915A370007151E /* NamespaceUiKit.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		80F3BD0E29915A590007151E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD0F29915A680007151E /* MainTabViewController.swift */,
+				80F3BD1329915EC00007151E /* HomeViewController.swift */,
+				80F3BD1529915F2A0007151E /* FavoriteViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		95C1FE6483943020E2478848 /* Frameworks */ = {
@@ -619,24 +661,30 @@
 				80F3BCDD2991391F0007151E /* MyAPIModule.swift in Sources */,
 				80F3BCED29913D860007151E /* PresentationModule.swift in Sources */,
 				807B3FF129912FF20080B34D /* ViewController.swift in Sources */,
+				80F3BD1029915A680007151E /* MainTabViewController.swift in Sources */,
 				80F3BCF229913FB90007151E /* GetGameListDataSource.swift in Sources */,
 				80F3BCE22991396B0007151E /* MyJsonAPI.swift in Sources */,
 				80F3BCF52991400B0007151E /* NameSpaceData.swift in Sources */,
 				80F3BCC8299133290007151E /* MyAFRequest.swift in Sources */,
 				80F3BD07299158510007151E /* DataDeveloperEntity.swift in Sources */,
 				80F3BCE4299139CD0007151E /* MainInjectorResolver.swift in Sources */,
+				80F3BD0A29915A140007151E /* NamespacePresentation.swift in Sources */,
 				80F3BCC1299132B10007151E /* NetworkingModule.swift in Sources */,
 				80F3BCD1299138500007151E /* InjectorResolver.swift in Sources */,
+				80F3BD0D29915A370007151E /* NamespaceUiKit.swift in Sources */,
 				807B3FED29912FF20080B34D /* AppDelegate.swift in Sources */,
 				80F3BD0329914FDB0007151E /* GetGameDetailDataSource.swift in Sources */,
 				80F3BCF72991402A0007151E /* DataGameEntity.swift in Sources */,
 				80F3BCBB2991319C0007151E /* Constans.swift in Sources */,
 				80F3BCDB299139050007151E /* DataModule.swift in Sources */,
+				80F3BD1229915DB10007151E /* UIViewControllerExtensions.swift in Sources */,
+				80F3BD1629915F2A0007151E /* FavoriteViewController.swift in Sources */,
 				80F3BCC4299132F00007151E /* SingletonScope.swift in Sources */,
 				807B3FEF29912FF20080B34D /* SceneDelegate.swift in Sources */,
 				80F3BCE629913A250007151E /* AppComponent.swift in Sources */,
 				80F3BCD32991386C0007151E /* ProvidedInjectorResolver.swift in Sources */,
 				80F3BCCD299133890007151E /* MyAFRequest+JsonRequest.swift in Sources */,
+				80F3BD1429915EC00007151E /* HomeViewController.swift in Sources */,
 				80F3BCCB2991334B0007151E /* JsonRequest.swift in Sources */,
 				80F3BCEB29913D700007151E /* MainPageModule.swift in Sources */,
 				80F3BCF9299141100007151E /* MyJsonAPI+GetGameListDataSource.swift in Sources */,
