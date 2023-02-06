@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import Cleanse
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    var propertyInjector: PropertyInjector<AppDelegate>!
+    var _injectorResolver: InjectorResolver!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        propertyInjector = try! ComponentFactory.of(AppComponent.self).build(())
+        propertyInjector.injectProperties(into: self)
+        precondition(_injectorResolver != nil)
         return true
     }
 
@@ -34,3 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: ProvideInjectorResolver {
+    /// Since we don't control creation of our AppDelegate, we have to use "property injection" to populate
+    /// our required properties
+    func injectProperties(_ injectorResolver: InjectorResolver) {
+        _injectorResolver = injectorResolver
+    }
+
+    var injectorResolver: InjectorResolver {
+        _injectorResolver
+    }
+}
