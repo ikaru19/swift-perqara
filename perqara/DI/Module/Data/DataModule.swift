@@ -12,5 +12,17 @@ struct DataModule: Module {
     static func configure(binder: SingletonScope) {
         binder.include(module: NetworkingModule.self)
         binder.include(module: MyAPIModule.self)
+        
+        // MARK: API
+        binder.bind(GetGameListDataSource.self)
+                .sharedInScope()
+                .to { (api: MyJsonAPI) in
+                    api
+                }
+        binder.bind(GetGameDetailDataSource.self)
+                .sharedInScope()
+                .to { (api: MyJsonAPI) in
+                    api
+                }
     }
 }

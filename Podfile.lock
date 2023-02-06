@@ -10,10 +10,10 @@ PODS:
   - Realm/Headers (5.5.2)
   - RealmSwift (5.5.2):
     - Realm (= 5.5.2)
-  - RxAlamofire (5.6.2):
-    - RxAlamofire/Core (= 5.6.2)
-  - RxAlamofire/Core (5.6.2):
-    - Alamofire (~> 5.2)
+  - RxAlamofire (5.7.1):
+    - RxAlamofire/Core (= 5.7.1)
+  - RxAlamofire/Core (5.7.1):
+    - Alamofire (~> 5.4)
     - RxSwift (~> 5.1)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
@@ -33,7 +33,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView (= 4.8.0)
   - Realm (from `https://github.com/realm/realm-cocoa.git`, tag `v5.5.2`)
   - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, tag `v5.5.2`)
-  - RxAlamofire (= 5.6.2)
+  - RxAlamofire (from `https://github.com/ikaru19/RxAlamofire.git`, branch `ssffqq`)
   - RxCocoa (= 5.1.1)
   - RxSwift (= 5.1.1)
   - SDWebImage (= 5.15.0)
@@ -45,7 +45,6 @@ SPEC REPOS:
     - Cleanse
     - CRRefresh
     - NVActivityIndicatorView
-    - RxAlamofire
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -61,6 +60,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/realm/realm-cocoa.git
     :submodules: true
     :tag: v5.5.2
+  RxAlamofire:
+    :branch: ssffqq
+    :git: https://github.com/ikaru19/RxAlamofire.git
 
 CHECKOUT OPTIONS:
   Realm:
@@ -71,6 +73,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/realm/realm-cocoa.git
     :submodules: true
     :tag: v5.5.2
+  RxAlamofire:
+    :commit: 4c4fe77241c2ec05e6fdbf935bcb9e828414bb74
+    :git: https://github.com/ikaru19/RxAlamofire.git
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -79,13 +84,13 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   Realm: 8d22fdff88cd93ee2ff9bdb37a286f7c90424024
   RealmSwift: 8e5decdf389228d974f2f529ae59a5d4a1c0bda3
-  RxAlamofire: aa949d345b1689eae02b7c7a217518878144f6df
+  RxAlamofire: cde47045ee4f4b4be5e409dac00878a7b80cff01
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 2c2d1501d3eb1b91cc146ea7ae4275c55d8061af
+PODFILE CHECKSUM: bd611999f5a908857cad712064c76edc2d439ae9
 
 COCOAPODS: 1.11.3

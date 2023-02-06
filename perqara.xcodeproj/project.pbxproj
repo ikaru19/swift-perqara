@@ -33,6 +33,13 @@
 		80F3BCEB29913D700007151E /* MainPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCEA29913D700007151E /* MainPageModule.swift */; };
 		80F3BCED29913D860007151E /* PresentationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCEC29913D860007151E /* PresentationModule.swift */; };
 		80F3BCEF29913D9F0007151E /* UIKitModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCEE29913D9F0007151E /* UIKitModule.swift */; };
+		80F3BCF229913FB90007151E /* GetGameListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCF129913FB90007151E /* GetGameListDataSource.swift */; };
+		80F3BCF52991400B0007151E /* NameSpaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCF42991400B0007151E /* NameSpaceData.swift */; };
+		80F3BCF72991402A0007151E /* DataGameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCF62991402A0007151E /* DataGameEntity.swift */; };
+		80F3BCF9299141100007151E /* MyJsonAPI+GetGameListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCF8299141100007151E /* MyJsonAPI+GetGameListDataSource.swift */; };
+		80F3BD0329914FDB0007151E /* GetGameDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD0229914FDB0007151E /* GetGameDetailDataSource.swift */; };
+		80F3BD05299151F90007151E /* MyJsonAPI+GetGameDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD04299151F90007151E /* MyJsonAPI+GetGameDetailDataSource.swift */; };
+		80F3BD07299158510007151E /* DataDeveloperEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD06299158510007151E /* DataDeveloperEntity.swift */; };
 		8FC2F17C34169BA050A984B3 /* Pods_perqara_perqaraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */; };
 		C40AE17A468C7E2205BD82A2 /* Pods_perqara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD5AAC7C5DFED3204A7E655 /* Pods_perqara.framework */; };
 		EC07ED0716EE042665F65791 /* Pods_perqaraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF8155DABDDAE7FD4D87ADC /* Pods_perqaraTests.framework */; };
@@ -91,6 +98,13 @@
 		80F3BCEA29913D700007151E /* MainPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModule.swift; sourceTree = "<group>"; };
 		80F3BCEC29913D860007151E /* PresentationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationModule.swift; sourceTree = "<group>"; };
 		80F3BCEE29913D9F0007151E /* UIKitModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitModule.swift; sourceTree = "<group>"; };
+		80F3BCF129913FB90007151E /* GetGameListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGameListDataSource.swift; sourceTree = "<group>"; };
+		80F3BCF42991400B0007151E /* NameSpaceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSpaceData.swift; sourceTree = "<group>"; };
+		80F3BCF62991402A0007151E /* DataGameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGameEntity.swift; sourceTree = "<group>"; };
+		80F3BCF8299141100007151E /* MyJsonAPI+GetGameListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyJsonAPI+GetGameListDataSource.swift"; sourceTree = "<group>"; };
+		80F3BD0229914FDB0007151E /* GetGameDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGameDetailDataSource.swift; sourceTree = "<group>"; };
+		80F3BD04299151F90007151E /* MyJsonAPI+GetGameDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyJsonAPI+GetGameDetailDataSource.swift"; sourceTree = "<group>"; };
+		80F3BD06299158510007151E /* DataDeveloperEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDeveloperEntity.swift; sourceTree = "<group>"; };
 		9FD4F0742BD11A10E2D8ECC4 /* Pods-perqara-perqaraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqara-perqaraUITests.release.xcconfig"; path = "Target Support Files/Pods-perqara-perqaraUITests/Pods-perqara-perqaraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_perqara_perqaraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F455203AE66C730A16053EE6 /* Pods-perqaraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqaraTests.debug.xcconfig"; path = "Target Support Files/Pods-perqaraTests/Pods-perqaraTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,8 +255,8 @@
 		80F3BCC5299133110007151E /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				80F3BCFB299143F80007151E /* Networking */,
 				80F3BCC92991333D0007151E /* Interface */,
-				80F3BCC62991331C0007151E /* Alamofire */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -284,7 +298,10 @@
 		80F3BCDF299139560007151E /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				80F3BCF329913FF60007151E /* Entity */,
+				80F3BCF029913FA90007151E /* Interface */,
 				80F3BCE02991395D0007151E /* API */,
+				80F3BCF42991400B0007151E /* NameSpaceData.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -293,6 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				80F3BCE12991396B0007151E /* MyJsonAPI.swift */,
+				80F3BCF8299141100007151E /* MyJsonAPI+GetGameListDataSource.swift */,
+				80F3BD04299151F90007151E /* MyJsonAPI+GetGameDetailDataSource.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -305,6 +324,32 @@
 				80F3BCEE29913D9F0007151E /* UIKitModule.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		80F3BCF029913FA90007151E /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BCF129913FB90007151E /* GetGameListDataSource.swift */,
+				80F3BD0229914FDB0007151E /* GetGameDetailDataSource.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		80F3BCF329913FF60007151E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BCF62991402A0007151E /* DataGameEntity.swift */,
+				80F3BD06299158510007151E /* DataDeveloperEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		80F3BCFB299143F80007151E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BCC62991331C0007151E /* Alamofire */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		95C1FE6483943020E2478848 /* Frameworks */ = {
@@ -574,12 +619,17 @@
 				80F3BCDD2991391F0007151E /* MyAPIModule.swift in Sources */,
 				80F3BCED29913D860007151E /* PresentationModule.swift in Sources */,
 				807B3FF129912FF20080B34D /* ViewController.swift in Sources */,
+				80F3BCF229913FB90007151E /* GetGameListDataSource.swift in Sources */,
 				80F3BCE22991396B0007151E /* MyJsonAPI.swift in Sources */,
+				80F3BCF52991400B0007151E /* NameSpaceData.swift in Sources */,
 				80F3BCC8299133290007151E /* MyAFRequest.swift in Sources */,
+				80F3BD07299158510007151E /* DataDeveloperEntity.swift in Sources */,
 				80F3BCE4299139CD0007151E /* MainInjectorResolver.swift in Sources */,
 				80F3BCC1299132B10007151E /* NetworkingModule.swift in Sources */,
 				80F3BCD1299138500007151E /* InjectorResolver.swift in Sources */,
 				807B3FED29912FF20080B34D /* AppDelegate.swift in Sources */,
+				80F3BD0329914FDB0007151E /* GetGameDetailDataSource.swift in Sources */,
+				80F3BCF72991402A0007151E /* DataGameEntity.swift in Sources */,
 				80F3BCBB2991319C0007151E /* Constans.swift in Sources */,
 				80F3BCDB299139050007151E /* DataModule.swift in Sources */,
 				80F3BCC4299132F00007151E /* SingletonScope.swift in Sources */,
@@ -589,6 +639,8 @@
 				80F3BCCD299133890007151E /* MyAFRequest+JsonRequest.swift in Sources */,
 				80F3BCCB2991334B0007151E /* JsonRequest.swift in Sources */,
 				80F3BCEB29913D700007151E /* MainPageModule.swift in Sources */,
+				80F3BCF9299141100007151E /* MyJsonAPI+GetGameListDataSource.swift in Sources */,
+				80F3BD05299151F90007151E /* MyJsonAPI+GetGameDetailDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
