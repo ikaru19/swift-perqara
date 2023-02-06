@@ -47,6 +47,7 @@
 		80F3BD1429915EC00007151E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD1329915EC00007151E /* HomeViewController.swift */; };
 		80F3BD1629915F2A0007151E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD1529915F2A0007151E /* FavoriteViewController.swift */; };
 		80F3BD19299169AE0007151E /* GameTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD18299169AE0007151E /* GameTableCell.swift */; };
+		80F3BD1B299175140007151E /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD1A299175140007151E /* GameDetailViewController.swift */; };
 		8FC2F17C34169BA050A984B3 /* Pods_perqara_perqaraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */; };
 		C40AE17A468C7E2205BD82A2 /* Pods_perqara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD5AAC7C5DFED3204A7E655 /* Pods_perqara.framework */; };
 		EC07ED0716EE042665F65791 /* Pods_perqaraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF8155DABDDAE7FD4D87ADC /* Pods_perqaraTests.framework */; };
@@ -119,6 +120,7 @@
 		80F3BD1329915EC00007151E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		80F3BD1529915F2A0007151E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		80F3BD18299169AE0007151E /* GameTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableCell.swift; sourceTree = "<group>"; };
+		80F3BD1A299175140007151E /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		9FD4F0742BD11A10E2D8ECC4 /* Pods-perqara-perqaraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqara-perqaraUITests.release.xcconfig"; path = "Target Support Files/Pods-perqara-perqaraUITests/Pods-perqara-perqaraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_perqara_perqaraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F455203AE66C730A16053EE6 /* Pods-perqaraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqaraTests.debug.xcconfig"; path = "Target Support Files/Pods-perqaraTests/Pods-perqaraTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				80F3BD0F29915A680007151E /* MainTabViewController.swift */,
 				80F3BD1329915EC00007151E /* HomeViewController.swift */,
 				80F3BD1529915F2A0007151E /* FavoriteViewController.swift */,
+				80F3BD1A299175140007151E /* GameDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				80F3BD0329914FDB0007151E /* GetGameDetailDataSource.swift in Sources */,
 				80F3BCF72991402A0007151E /* DataGameEntity.swift in Sources */,
 				80F3BCBB2991319C0007151E /* Constans.swift in Sources */,
+				80F3BD1B299175140007151E /* GameDetailViewController.swift in Sources */,
 				80F3BCDB299139050007151E /* DataModule.swift in Sources */,
 				80F3BD1229915DB10007151E /* UIViewControllerExtensions.swift in Sources */,
 				80F3BD1629915F2A0007151E /* FavoriteViewController.swift in Sources */,

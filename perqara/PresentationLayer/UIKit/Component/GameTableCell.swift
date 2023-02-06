@@ -162,7 +162,6 @@ private extension GameTableCell {
         view.sd_imageIndicator = SDWebImageActivityIndicator.gray
         let url = URL(string: "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg")
         view.sd_setImage(with: url)
-        view.layer.cornerRadius = 10
         return view
     }
 }

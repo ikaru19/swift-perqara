@@ -146,6 +146,9 @@ extension Presentation.UiKit.HomeViewController: UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: GOTO DETAIL SCREEN
+        let vc = Presentation.UiKit.GameDetailViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
