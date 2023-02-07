@@ -18,5 +18,9 @@ struct UIKitControllerModule: Module {
             .to {
                 Presentation.UiKit.GameDetailViewController(nibName: nil, bundle: nil, viewModel: $0)
             }
+        binder.bind(Presentation.UiKit.FavoriteViewController.self)
+            .to {
+                Presentation.UiKit.FavoriteViewController(nibName: nil, bundle: nil, viewModel: $0)
+            }
     }
 }

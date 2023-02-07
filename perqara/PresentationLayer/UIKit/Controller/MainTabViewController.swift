@@ -62,7 +62,7 @@ private extension Presentation.UiKit.MainTabViewController {
 private extension Presentation.UiKit.MainTabViewController {
     func createHomeViewController() -> UIViewController {
         guard let vc = (UIApplication.shared.delegate as? ProvideViewControllerResolver)?.vcResolver.instantiateHomeViewController().get() else {
-            fatalError("View Controller can't be nil: GenieSmart")
+            fatalError("View Controller can't be nil: Home")
         }
         // Create Tab one
         return createNavController(
@@ -75,8 +75,10 @@ private extension Presentation.UiKit.MainTabViewController {
     }
     
     func createFavoriteViewController() -> UIViewController {
+        guard let vc = (UIApplication.shared.delegate as? ProvideViewControllerResolver)?.vcResolver.instantiateFavoriteViewController().get() else {
+            fatalError("View Controller can't be nil: Favorite")
+        }
         // Create Tab one
-        let vc = Presentation.UiKit.FavoriteViewController(nibName: nil, bundle: nil)
         return createNavController(
                 for: vc,
                 title: "Favorite",

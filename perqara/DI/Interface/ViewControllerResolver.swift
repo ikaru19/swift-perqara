@@ -11,4 +11,5 @@ import Cleanse
 protocol ViewControllerResolver: AnyObject {
     func instantiateHomeViewController() -> Provider<Presentation.UiKit.HomeViewController>
     func instantiateGameDetailController() -> Provider<Presentation.UiKit.GameDetailViewController>
+    func instantiateFavoriteViewController() -> Provider<Presentation.UiKit.FavoriteViewController>
 }

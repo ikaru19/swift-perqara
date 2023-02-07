@@ -13,4 +13,6 @@ protocol GameDetailViewModel: AnyObject {
     var gameData: Observable<Domain.GameEntity> { get }
     
     func getGameDetail(byId: String)
+    func insetGameToLocal(game: Domain.GameEntity)
+    func deletaLocalGame(byId: String)
 }

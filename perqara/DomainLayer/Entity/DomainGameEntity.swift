@@ -9,13 +9,14 @@ import Foundation
 
 extension Domain {
     struct GameEntity {
-        var id: Int
+        var id: String
         var name: String
         var released: String
         var backgroundImage: String
         var rating: String
         var description: String
         var suggestionsCount: String
-        var developer: [String] = []
+        var developer: String
+        var isFavorite: Bool
     }
 }

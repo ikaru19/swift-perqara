@@ -233,9 +233,8 @@ extension Presentation.UiKit.HomeViewController: UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: GOTO DETAIL SCREEN
         if let vc = (UIApplication.shared.delegate as? ProvideViewControllerResolver)?.vcResolver.instantiateGameDetailController().get() {
-            vc.gameId = data[indexPath.row].id
+            vc.gameId = String(data[indexPath.row].id)
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }

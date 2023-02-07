@@ -9,15 +9,19 @@ import Foundation
 import Cleanse
 
 class MainViewControllerResolver: ViewControllerResolver {
+
     var homeVcProvider: Provider<Presentation.UiKit.HomeViewController>
     var gameDetailVcProvider: Provider<Presentation.UiKit.GameDetailViewController>
+    var favoriteVcProvider: Provider<Presentation.UiKit.FavoriteViewController>
     
     init(
         homeVcProvider: Provider<Presentation.UiKit.HomeViewController>,
-        gameDetailVcProvider: Provider<Presentation.UiKit.GameDetailViewController>
+        gameDetailVcProvider: Provider<Presentation.UiKit.GameDetailViewController>,
+        favoriteVcProvider: Provider<Presentation.UiKit.FavoriteViewController>
     ) {
         self.homeVcProvider = homeVcProvider
         self.gameDetailVcProvider = gameDetailVcProvider
+        self.favoriteVcProvider = favoriteVcProvider
     }
 
     func instantiateHomeViewController() -> Provider<Presentation.UiKit.HomeViewController> {
@@ -28,4 +32,7 @@ class MainViewControllerResolver: ViewControllerResolver {
         gameDetailVcProvider
     }
     
+    func instantiateFavoriteViewController() -> Cleanse.Provider<Presentation.UiKit.FavoriteViewController> {
+        favoriteVcProvider
+    }
 }

@@ -14,5 +14,7 @@ struct ViewModelModule: Module {
                 .to(factory: HomeViewModelImpl.init)
         binder.bind(GameDetailViewModel.self)
                 .to(factory: GameDetailViewModelImpl.init)
+        binder.bind(FavoriteViewModel.self)
+                .to(factory: FavoriteViewModelImpl.init)
     }
 }

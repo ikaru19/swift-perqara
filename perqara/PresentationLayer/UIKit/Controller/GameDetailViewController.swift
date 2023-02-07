@@ -29,7 +29,7 @@ extension Presentation.UiKit {
         private var viewModel: GameDetailViewModel
         private var data: Domain.GameEntity?
         
-        var gameId: Int?
+        var gameId: String?
         
         init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, viewModel: GameDetailViewModel) {
             self.viewModel = viewModel
@@ -49,8 +49,16 @@ extension Presentation.UiKit {
         //This method will call when you press button.
         @objc
         func favoriteButtonTapped() {
-            // TODO: Add Favorite Button Tapped
-            print("favorite button tapped")
+            if let data = data,
+               !data.isFavorite {
+                self.data?.isFavorite.toggle()
+                viewModel.insetGameToLocal(game: data)
+                reloadView()
+            } else {
+                self.data?.isFavorite.toggle()
+                viewModel.deletaLocalGame(byId: gameId ?? "")
+                reloadView()
+            }
         }
         
         override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +71,7 @@ extension Presentation.UiKit {
             super.viewDidAppear(animated)
             if let gameId = gameId {
                 showActivityIndicator()
-                viewModel.getGameDetail(byId: String(gameId))
+                viewModel.getGameDetail(byId: gameId)
             }
         }
         
@@ -110,7 +118,11 @@ private extension Presentation.UiKit.GameDetailViewController {
         let textDescription = data.description
         let str = textDescription.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         lbContent?.text = str
-        
+        reloadView()
+    }
+    
+    func reloadView() {
+        initView()
     }
 }
 
@@ -283,18 +295,26 @@ private extension Presentation.UiKit.GameDetailViewController {
     }
     
     func initNavigationRightButton() {
-        //create a new button
-        let button = UIButton(type: .custom)
-        //set image for button
-        button.setImage(UIImage(systemName: "heart"), for: .normal)
-        //add function for button
-        button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
-        //set frame
-        button.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        if let data = data {
+            //create a new button
+            let button = UIButton(type: .custom)
+            //set image for button
+            if data.isFavorite {
+                button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            } else {
+                button.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+            
+            //add function for button
+            button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+            //set frame
+            button.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
 
-        let barButton = UIBarButtonItem(customView: button)
-        //assign button to navigationbar
-        self.navigationItem.rightBarButtonItem = barButton
+            let barButton = UIBarButtonItem(customView: button)
+            //assign button to navigationbar
+            
+            self.navigationItem.rightBarButtonItem = barButton
+        }
     }
     
     

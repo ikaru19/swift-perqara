@@ -8,28 +8,76 @@
 import Foundation
 import UIKit
 import SnapKit
+import RxSwift
 
 // MARK: LIFECYCLE AND CALLBACK
 extension Presentation.UiKit {
     class FavoriteViewController: UIViewController {
         private var tvContent: UITableView?
-
-        override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        private var data: [Domain.GameEntity] = []
+        private var vmBag = DisposeBag()
+        private var viewModel: FavoriteViewModel
+        
+        init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, viewModel: FavoriteViewModel) {
+            self.viewModel = viewModel
             super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         }
         
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
+        
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
 
+            subscribeViewModel()
+        }
+        
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            viewModel.getLocalGame()
+        }
+        
         override func viewDidLoad() {
             super.viewDidLoad()
             initDesign()
             initViews()
         }
+        
+        private func subscribeViewModel() {            viewModel.errors
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                    onNext: { [weak self] error in
+                        guard let self = self else {
+                            return
+                        }
+                        self.handleError(error)
+                    }
+                )
+                .disposed(by: vmBag)
+            viewModel
+                .gameLists
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                    onNext: { [weak self] games in
+                        guard let self = self else {
+                            return
+                        }
+                        self.initGamesData(games)
+                    }
+                )
+                .disposed(by: vmBag)
+        }
     }
 }
 
+// MARK: Function
+private extension Presentation.UiKit.FavoriteViewController {
+    func initGamesData(_ datas: [Domain.GameEntity]) {
+        self.data =  datas
+        tvContent?.reloadData()
+    }
+}
 // MARK: DESIGN
 private extension Presentation.UiKit.FavoriteViewController {
     func initDesign() {
@@ -81,7 +129,7 @@ extension Presentation.UiKit.FavoriteViewController: UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        50
+        data.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,12 +139,16 @@ extension Presentation.UiKit.FavoriteViewController: UITableViewDelegate, UITabl
             return UITableViewCell()
         }
         cell.selectionStyle = .none
-//        cell.updateUI()
+        cell.updateUI(data: data[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: GOTO DETAIL SCREEN
+        if let vc = (UIApplication.shared.delegate as? ProvideViewControllerResolver)?.vcResolver.instantiateGameDetailController().get() {
+            vc.gameId = String(data[indexPath.row].id)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

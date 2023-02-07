@@ -29,7 +29,6 @@
 		80F3BCDD2991391F0007151E /* MyAPIModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCDC2991391F0007151E /* MyAPIModule.swift */; };
 		80F3BCE22991396B0007151E /* MyJsonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCE12991396B0007151E /* MyJsonAPI.swift */; };
 		80F3BCE4299139CD0007151E /* MainInjectorResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCE3299139CD0007151E /* MainInjectorResolver.swift */; };
-		80F3BCE629913A250007151E /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCE529913A250007151E /* AppComponent.swift */; };
 		80F3BCEB29913D700007151E /* MainPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCEA29913D700007151E /* MainPageModule.swift */; };
 		80F3BCED29913D860007151E /* PresentationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCEC29913D860007151E /* PresentationModule.swift */; };
 		80F3BCEF29913D9F0007151E /* UIKitModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCEE29913D9F0007151E /* UIKitModule.swift */; };
@@ -63,6 +62,15 @@
 		80F3BD3A2991F6860007151E /* ViewModelModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD392991F6860007151E /* ViewModelModule.swift */; };
 		80F3BD3C299202C10007151E /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD3B299202C10007151E /* GameDetailViewModel.swift */; };
 		80F3BD3E299202F30007151E /* GameDetailViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD3D299202F30007151E /* GameDetailViewModelImpl.swift */; };
+		80F3BD4129920BB80007151E /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD4029920BB80007151E /* RealmHelper.swift */; };
+		80F3BD4429920BF40007151E /* RealmDatabaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD4329920BF40007151E /* RealmDatabaseModule.swift */; };
+		80F3BD4829920C3C0007151E /* MyLocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD4729920C3C0007151E /* MyLocalDatabase.swift */; };
+		80F3BD4B29920C670007151E /* LocalGameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD4A29920C670007151E /* LocalGameEntity.swift */; };
+		80F3BD4E29920E570007151E /* GameLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD4D29920E570007151E /* GameLocalDataSource.swift */; };
+		80F3BD5029920EAE0007151E /* MyLocalDatabase+Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD4F29920EAE0007151E /* MyLocalDatabase+Game.swift */; };
+		80F3BD522992173C0007151E /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BCE529913A250007151E /* AppComponent.swift */; };
+		80F3BD54299220CD0007151E /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD53299220CD0007151E /* FavoriteViewModel.swift */; };
+		80F3BD56299220F70007151E /* FavoriteViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD55299220F70007151E /* FavoriteViewModelImpl.swift */; };
 		8FC2F17C34169BA050A984B3 /* Pods_perqara_perqaraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */; };
 		C40AE17A468C7E2205BD82A2 /* Pods_perqara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD5AAC7C5DFED3204A7E655 /* Pods_perqara.framework */; };
 		EC07ED0716EE042665F65791 /* Pods_perqaraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF8155DABDDAE7FD4D87ADC /* Pods_perqaraTests.framework */; };
@@ -151,6 +159,14 @@
 		80F3BD392991F6860007151E /* ViewModelModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelModule.swift; sourceTree = "<group>"; };
 		80F3BD3B299202C10007151E /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		80F3BD3D299202F30007151E /* GameDetailViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModelImpl.swift; sourceTree = "<group>"; };
+		80F3BD4029920BB80007151E /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		80F3BD4329920BF40007151E /* RealmDatabaseModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseModule.swift; sourceTree = "<group>"; };
+		80F3BD4729920C3C0007151E /* MyLocalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocalDatabase.swift; sourceTree = "<group>"; };
+		80F3BD4A29920C670007151E /* LocalGameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGameEntity.swift; sourceTree = "<group>"; };
+		80F3BD4D29920E570007151E /* GameLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLocalDataSource.swift; sourceTree = "<group>"; };
+		80F3BD4F29920EAE0007151E /* MyLocalDatabase+Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyLocalDatabase+Game.swift"; sourceTree = "<group>"; };
+		80F3BD53299220CD0007151E /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		80F3BD55299220F70007151E /* FavoriteViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModelImpl.swift; sourceTree = "<group>"; };
 		9FD4F0742BD11A10E2D8ECC4 /* Pods-perqara-perqaraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqara-perqaraUITests.release.xcconfig"; path = "Target Support Files/Pods-perqara-perqaraUITests/Pods-perqara-perqaraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_perqara_perqaraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F455203AE66C730A16053EE6 /* Pods-perqaraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqaraTests.debug.xcconfig"; path = "Target Support Files/Pods-perqaraTests/Pods-perqaraTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -219,11 +235,11 @@
 				807B3FEC29912FF20080B34D /* AppDelegate.swift */,
 				807B3FEE29912FF20080B34D /* SceneDelegate.swift */,
 				807B3FF029912FF20080B34D /* ViewController.swift */,
+				80F3BCE529913A250007151E /* AppComponent.swift */,
 				807B3FF229912FF20080B34D /* Main.storyboard */,
 				807B3FF529912FF20080B34D /* Assets.xcassets */,
 				807B3FF729912FF20080B34D /* LaunchScreen.storyboard */,
 				807B3FFA29912FF20080B34D /* Info.plist */,
-				80F3BCE529913A250007151E /* AppComponent.swift */,
 			);
 			path = perqara;
 			sourceTree = "<group>";
@@ -248,6 +264,7 @@
 		80F3BCB92991318C0007151E /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				80F3BD3F29920BAC0007151E /* Helper */,
 				80F3BCBA2991319C0007151E /* Constans.swift */,
 				80F3BD1129915DB10007151E /* UIViewControllerExtensions.swift */,
 			);
@@ -280,6 +297,7 @@
 		80F3BCBE299132960007151E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				80F3BD4229920BDC0007151E /* Local */,
 				80F3BCBF2991329E0007151E /* Remote */,
 				80F3BCDA299139050007151E /* DataModule.swift */,
 			);
@@ -343,6 +361,7 @@
 		80F3BCDE299139450007151E /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				80F3BD4529920C200007151E /* Local */,
 				80F3BCDF299139560007151E /* Remote */,
 			);
 			path = DataLayer;
@@ -489,8 +508,61 @@
 				80F3BD312991F43D0007151E /* HomeViewModelImpl.swift */,
 				80F3BD3B299202C10007151E /* GameDetailViewModel.swift */,
 				80F3BD3D299202F30007151E /* GameDetailViewModelImpl.swift */,
+				80F3BD53299220CD0007151E /* FavoriteViewModel.swift */,
+				80F3BD55299220F70007151E /* FavoriteViewModelImpl.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		80F3BD3F29920BAC0007151E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD4029920BB80007151E /* RealmHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		80F3BD4229920BDC0007151E /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD4329920BF40007151E /* RealmDatabaseModule.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		80F3BD4529920C200007151E /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD4C29920E350007151E /* Inteface */,
+				80F3BD4929920C570007151E /* Entity */,
+				80F3BD4629920C2F0007151E /* MyDatabase */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		80F3BD4629920C2F0007151E /* MyDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD4729920C3C0007151E /* MyLocalDatabase.swift */,
+				80F3BD4F29920EAE0007151E /* MyLocalDatabase+Game.swift */,
+			);
+			path = MyDatabase;
+			sourceTree = "<group>";
+		};
+		80F3BD4929920C570007151E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD4A29920C670007151E /* LocalGameEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		80F3BD4C29920E350007151E /* Inteface */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD4D29920E570007151E /* GameLocalDataSource.swift */,
+			);
+			path = Inteface;
 			sourceTree = "<group>";
 		};
 		95C1FE6483943020E2478848 /* Frameworks */ = {
@@ -755,6 +827,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80F3BD4429920BF40007151E /* RealmDatabaseModule.swift in Sources */,
 				80F3BCEF29913D9F0007151E /* UIKitModule.swift in Sources */,
 				80F3BD3C299202C10007151E /* GameDetailViewModel.swift in Sources */,
 				80F3BD1F2991EC6F0007151E /* NameSpaceDomain.swift in Sources */,
@@ -763,6 +836,7 @@
 				80F3BD302991F4090007151E /* HomeViewModel.swift in Sources */,
 				80F3BD19299169AE0007151E /* GameTableCell.swift in Sources */,
 				80F3BCDD2991391F0007151E /* MyAPIModule.swift in Sources */,
+				80F3BD522992173C0007151E /* AppComponent.swift in Sources */,
 				80F3BCED29913D860007151E /* PresentationModule.swift in Sources */,
 				807B3FF129912FF20080B34D /* ViewController.swift in Sources */,
 				80F3BD1029915A680007151E /* MainTabViewController.swift in Sources */,
@@ -771,32 +845,38 @@
 				80F3BCF52991400B0007151E /* NameSpaceData.swift in Sources */,
 				80F3BCC8299133290007151E /* MyAFRequest.swift in Sources */,
 				80F3BD322991F43D0007151E /* HomeViewModelImpl.swift in Sources */,
+				80F3BD4129920BB80007151E /* RealmHelper.swift in Sources */,
 				80F3BD07299158510007151E /* DataDeveloperEntity.swift in Sources */,
 				80F3BCE4299139CD0007151E /* MainInjectorResolver.swift in Sources */,
 				80F3BD0A29915A140007151E /* NamespacePresentation.swift in Sources */,
 				80F3BD262991ED330007151E /* GameRepositoryImpl.swift in Sources */,
+				80F3BD4E29920E570007151E /* GameLocalDataSource.swift in Sources */,
 				80F3BCC1299132B10007151E /* NetworkingModule.swift in Sources */,
 				80F3BCD1299138500007151E /* InjectorResolver.swift in Sources */,
 				80F3BD212991EC910007151E /* GameRepository.swift in Sources */,
 				80F3BD0D29915A370007151E /* NamespaceUiKit.swift in Sources */,
+				80F3BD56299220F70007151E /* FavoriteViewModelImpl.swift in Sources */,
 				807B3FED29912FF20080B34D /* AppDelegate.swift in Sources */,
+				80F3BD4829920C3C0007151E /* MyLocalDatabase.swift in Sources */,
 				80F3BD0329914FDB0007151E /* GetGameDetailDataSource.swift in Sources */,
 				80F3BCF72991402A0007151E /* DataGameEntity.swift in Sources */,
 				80F3BCBB2991319C0007151E /* Constans.swift in Sources */,
 				80F3BD1B299175140007151E /* GameDetailViewController.swift in Sources */,
+				80F3BD4B29920C670007151E /* LocalGameEntity.swift in Sources */,
 				80F3BCDB299139050007151E /* DataModule.swift in Sources */,
 				80F3BD1229915DB10007151E /* UIViewControllerExtensions.swift in Sources */,
 				80F3BD242991ECBD0007151E /* DomainGameEntity.swift in Sources */,
 				80F3BD1629915F2A0007151E /* FavoriteViewController.swift in Sources */,
 				80F3BD3E299202F30007151E /* GameDetailViewModelImpl.swift in Sources */,
 				80F3BD342991F53A0007151E /* ViewControllerResolver.swift in Sources */,
+				80F3BD5029920EAE0007151E /* MyLocalDatabase+Game.swift in Sources */,
 				80F3BCC4299132F00007151E /* SingletonScope.swift in Sources */,
 				80F3BD3A2991F6860007151E /* ViewModelModule.swift in Sources */,
 				80F3BD382991F6600007151E /* UIKitControllerModule.swift in Sources */,
+				80F3BD54299220CD0007151E /* FavoriteViewModel.swift in Sources */,
 				80F3BD2B2991F2AB0007151E /* DomainModule.swift in Sources */,
 				80F3BD282991EFBE0007151E /* DomainError.swift in Sources */,
 				807B3FEF29912FF20080B34D /* SceneDelegate.swift in Sources */,
-				80F3BCE629913A250007151E /* AppComponent.swift in Sources */,
 				80F3BCD32991386C0007151E /* ProvidedInjectorResolver.swift in Sources */,
 				80F3BCCD299133890007151E /* MyAFRequest+JsonRequest.swift in Sources */,
 				80F3BD1429915EC00007151E /* HomeViewController.swift in Sources */,

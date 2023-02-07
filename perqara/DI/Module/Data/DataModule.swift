@@ -12,6 +12,7 @@ struct DataModule: Module {
     static func configure(binder: SingletonScope) {
         binder.include(module: NetworkingModule.self)
         binder.include(module: MyAPIModule.self)
+        binder.include(module: RealmDatabaseModule.self)
         
         // MARK: API
         binder.bind(GetGameListDataSource.self)
