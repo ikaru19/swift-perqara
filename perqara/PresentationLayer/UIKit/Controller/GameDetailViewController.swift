@@ -36,6 +36,13 @@ extension Presentation.UiKit {
             initDesign()
             initView()
         }
+        
+        //This method will call when you press button.
+        @objc
+        func favoriteButtonTapped() {
+            // TODO: Add Favorite Button Tapped
+            print("favorite button tapped")
+        }
     }
 }
 
@@ -202,7 +209,7 @@ private extension Presentation.UiKit.GameDetailViewController {
         view.textColor = .darkText
         var test = "<p>Portal 2 is a first-person puzzle game developed by Valve Corporation and released on April 19, 2011 on Steam, PS3 and Xbox 360. It was published by Valve Corporation in digital form and by Electronic Arts in physical form. </p>\n<p>Its plot directly follows the first game&#39;s, taking place in the Half-Life universe. You play as Chell, a test subject in a research facility formerly ran by the company Aperture Science, but taken over by an evil AI that turned upon its creators, GladOS. After defeating GladOS at the end of the first game but failing to escape the facility, Chell is woken up from a stasis chamber by an AI personality core, Wheatley, as the unkempt complex is falling apart. As the two attempt to navigate through the ruins and escape, they stumble upon GladOS, and accidentally re-activate her...</p>\n<p>Portal 2&#39;s core mechanics are very similar to the first game&#39;s ; the player must make their way through several test chambers which involve puzzles. For this purpose, they possess a Portal Gun, a weapon capable of creating teleportation portals on white surfaces. This seemingly simple mechanic and its subtleties coupled with the many different puzzle elements that can appear in puzzles allows the game to be easy to start playing, yet still feature profound gameplay. The sequel adds several new puzzle elements, such as gel that can render surfaces bouncy or allow you to accelerate when running on them.</p>\n<p>The game is often praised for its gameplay, its memorable dialogue and writing and its aesthetic. Both games in the series are responsible for inspiring most puzzle games succeeding them, particularly first-person puzzle games. The series, its characters and even its items such as the portal gun and the companion cube have become a cultural icon within gaming communities.</p>\n<p>Portal 2 also features a co-op mode where two players take on the roles of robots being led through tests by GladOS, as well as an in-depth level editor.</p>"
         let str = test.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-        view.text = str
+        view.text = str.quoteEscape()
         view.numberOfLines = 0
         view.textAlignment = .left
         return view
@@ -214,7 +221,24 @@ private extension Presentation.UiKit.GameDetailViewController {
     func initView() {
         lbRate?.attributedText = generateRateLabelText(rate: "4.5")
         lbCount?.attributedText = generateCountLabelText(count: "200")
+        initNavigationRightButton()
     }
+    
+    func initNavigationRightButton() {
+        //create a new button
+        let button = UIButton(type: .custom)
+        //set image for button
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        //add function for button
+        button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        //set frame
+        button.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+
+        let barButton = UIBarButtonItem(customView: button)
+        //assign button to navigationbar
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
     
     private func generateRateLabelText(rate: String) -> NSMutableAttributedString {
         let fullText = NSMutableAttributedString(string: "")
