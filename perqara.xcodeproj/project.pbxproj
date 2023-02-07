@@ -48,6 +48,12 @@
 		80F3BD1629915F2A0007151E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD1529915F2A0007151E /* FavoriteViewController.swift */; };
 		80F3BD19299169AE0007151E /* GameTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD18299169AE0007151E /* GameTableCell.swift */; };
 		80F3BD1B299175140007151E /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD1A299175140007151E /* GameDetailViewController.swift */; };
+		80F3BD1F2991EC6F0007151E /* NameSpaceDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD1E2991EC6F0007151E /* NameSpaceDomain.swift */; };
+		80F3BD212991EC910007151E /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD202991EC910007151E /* GameRepository.swift */; };
+		80F3BD242991ECBD0007151E /* DomainGameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD232991ECBD0007151E /* DomainGameEntity.swift */; };
+		80F3BD262991ED330007151E /* GameRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD252991ED330007151E /* GameRepositoryImpl.swift */; };
+		80F3BD282991EFBE0007151E /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD272991EFBE0007151E /* DomainError.swift */; };
+		80F3BD2B2991F2AB0007151E /* DomainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3BD2A2991F2AB0007151E /* DomainModule.swift */; };
 		8FC2F17C34169BA050A984B3 /* Pods_perqara_perqaraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */; };
 		C40AE17A468C7E2205BD82A2 /* Pods_perqara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD5AAC7C5DFED3204A7E655 /* Pods_perqara.framework */; };
 		EC07ED0716EE042665F65791 /* Pods_perqaraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF8155DABDDAE7FD4D87ADC /* Pods_perqaraTests.framework */; };
@@ -121,6 +127,12 @@
 		80F3BD1529915F2A0007151E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		80F3BD18299169AE0007151E /* GameTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableCell.swift; sourceTree = "<group>"; };
 		80F3BD1A299175140007151E /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
+		80F3BD1E2991EC6F0007151E /* NameSpaceDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSpaceDomain.swift; sourceTree = "<group>"; };
+		80F3BD202991EC910007151E /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
+		80F3BD232991ECBD0007151E /* DomainGameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainGameEntity.swift; sourceTree = "<group>"; };
+		80F3BD252991ED330007151E /* GameRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepositoryImpl.swift; sourceTree = "<group>"; };
+		80F3BD272991EFBE0007151E /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		80F3BD2A2991F2AB0007151E /* DomainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModule.swift; sourceTree = "<group>"; };
 		9FD4F0742BD11A10E2D8ECC4 /* Pods-perqara-perqaraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqara-perqaraUITests.release.xcconfig"; path = "Target Support Files/Pods-perqara-perqaraUITests/Pods-perqara-perqaraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B277DCBF1D39299E753AC346 /* Pods_perqara_perqaraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_perqara_perqaraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F455203AE66C730A16053EE6 /* Pods-perqaraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-perqaraTests.debug.xcconfig"; path = "Target Support Files/Pods-perqaraTests/Pods-perqaraTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +192,7 @@
 		807B3FEB29912FF20080B34D /* perqara */ = {
 			isa = PBXGroup;
 			children = (
+				80F3BD1C2991EC360007151E /* DomainLayer */,
 				80F3BD08299159FD0007151E /* PresentationLayer */,
 				80F3BCDE299139450007151E /* DataLayer */,
 				80F3BCC5299133110007151E /* Infrastructure */,
@@ -236,6 +249,7 @@
 		80F3BCBD2991328E0007151E /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				80F3BD292991F2910007151E /* Domain */,
 				80F3BCE929913D620007151E /* Presentation */,
 				80F3BCBE299132960007151E /* Data */,
 				80F3BCD8299138DE0007151E /* CoreModule.swift */,
@@ -406,6 +420,42 @@
 				80F3BD18299169AE0007151E /* GameTableCell.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		80F3BD1C2991EC360007151E /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD222991ECB20007151E /* Entity */,
+				80F3BD1D2991EC410007151E /* Repository */,
+				80F3BD1E2991EC6F0007151E /* NameSpaceDomain.swift */,
+			);
+			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		80F3BD1D2991EC410007151E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD202991EC910007151E /* GameRepository.swift */,
+				80F3BD252991ED330007151E /* GameRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		80F3BD222991ECB20007151E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD232991ECBD0007151E /* DomainGameEntity.swift */,
+				80F3BD272991EFBE0007151E /* DomainError.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		80F3BD292991F2910007151E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BD2A2991F2AB0007151E /* DomainModule.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		95C1FE6483943020E2478848 /* Frameworks */ = {
@@ -671,6 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F3BCEF29913D9F0007151E /* UIKitModule.swift in Sources */,
+				80F3BD1F2991EC6F0007151E /* NameSpaceDomain.swift in Sources */,
 				80F3BCD9299138DE0007151E /* CoreModule.swift in Sources */,
 				80F3BD19299169AE0007151E /* GameTableCell.swift in Sources */,
 				80F3BCDD2991391F0007151E /* MyAPIModule.swift in Sources */,
@@ -684,8 +735,10 @@
 				80F3BD07299158510007151E /* DataDeveloperEntity.swift in Sources */,
 				80F3BCE4299139CD0007151E /* MainInjectorResolver.swift in Sources */,
 				80F3BD0A29915A140007151E /* NamespacePresentation.swift in Sources */,
+				80F3BD262991ED330007151E /* GameRepositoryImpl.swift in Sources */,
 				80F3BCC1299132B10007151E /* NetworkingModule.swift in Sources */,
 				80F3BCD1299138500007151E /* InjectorResolver.swift in Sources */,
+				80F3BD212991EC910007151E /* GameRepository.swift in Sources */,
 				80F3BD0D29915A370007151E /* NamespaceUiKit.swift in Sources */,
 				807B3FED29912FF20080B34D /* AppDelegate.swift in Sources */,
 				80F3BD0329914FDB0007151E /* GetGameDetailDataSource.swift in Sources */,
@@ -694,8 +747,11 @@
 				80F3BD1B299175140007151E /* GameDetailViewController.swift in Sources */,
 				80F3BCDB299139050007151E /* DataModule.swift in Sources */,
 				80F3BD1229915DB10007151E /* UIViewControllerExtensions.swift in Sources */,
+				80F3BD242991ECBD0007151E /* DomainGameEntity.swift in Sources */,
 				80F3BD1629915F2A0007151E /* FavoriteViewController.swift in Sources */,
 				80F3BCC4299132F00007151E /* SingletonScope.swift in Sources */,
+				80F3BD2B2991F2AB0007151E /* DomainModule.swift in Sources */,
+				80F3BD282991EFBE0007151E /* DomainError.swift in Sources */,
 				807B3FEF29912FF20080B34D /* SceneDelegate.swift in Sources */,
 				80F3BCE629913A250007151E /* AppComponent.swift in Sources */,
 				80F3BCD32991386C0007151E /* ProvidedInjectorResolver.swift in Sources */,
