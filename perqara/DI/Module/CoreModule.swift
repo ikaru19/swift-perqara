@@ -16,5 +16,7 @@ struct CoreModule: Module {
 
         binder.bind(InjectorResolver.self)
                 .to(factory: MainInjectorResolver.init)
+        binder.bind(ViewControllerResolver.self)
+                .to(factory: MainViewControllerResolver.init)
     }
 }

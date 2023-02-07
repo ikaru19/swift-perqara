@@ -91,7 +91,7 @@ extension Presentation.UiKit.FavoriteViewController: UITableViewDelegate, UITabl
             return UITableViewCell()
         }
         cell.selectionStyle = .none
-        cell.updateUI()
+//        cell.updateUI()
         return cell
     }
 

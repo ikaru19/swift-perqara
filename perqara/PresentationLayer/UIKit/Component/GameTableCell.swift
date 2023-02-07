@@ -17,6 +17,8 @@ class GameTableCell: UITableViewCell {
     private var lbTitle: UILabel?
     private var lbReleaseDate: UILabel?
     private var lbRate: UILabel?
+    
+    private var data: Domain.GameEntity?
 
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -33,9 +35,13 @@ class GameTableCell: UITableViewCell {
         super.layoutSubviews()
     }
     
-    func updateUI() {
-        
-        lbRate?.attributedText = generateRateLabelText(rate: "4.3")
+    func updateUI(data: Domain.GameEntity) {
+        self.data = data
+        lbRate?.attributedText = generateRateLabelText(rate: data.rating)
+        let url = URL(string: data.backgroundImage)
+        ivContent?.sd_setImage(with: url)
+        lbTitle?.text = data.name
+        lbReleaseDate?.text = "Release date \(data.released)"
     }
     
     private func generateRateLabelText(rate: String) -> NSMutableAttributedString {
@@ -139,7 +145,6 @@ private extension GameTableCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         view.textColor = .darkText
-        view.text = "Portal 2"
         view.numberOfLines = 0
         view.textAlignment = .left
         return view
@@ -150,7 +155,6 @@ private extension GameTableCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFont(ofSize: 12, weight: .light)
         view.textColor = .darkText.withAlphaComponent(0.7)
-        view.text = "Release date 2021-08-20"
         view.numberOfLines = 0
         view.textAlignment = .left
         return view
@@ -160,8 +164,6 @@ private extension GameTableCell {
         let view = UIImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        let url = URL(string: "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg")
-        view.sd_setImage(with: url)
         return view
     }
 }

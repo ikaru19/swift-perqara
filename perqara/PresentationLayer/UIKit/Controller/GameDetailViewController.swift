@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import SDWebImage
+import RxSwift
 
 // MARK: LIFECYCLE AND CALLBACK
 extension Presentation.UiKit {
@@ -23,7 +24,15 @@ extension Presentation.UiKit {
         private var lbCount: UILabel?
         private var lbContent: UILabel?
         
-        override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        private var vmBag = DisposeBag()
+
+        private var viewModel: GameDetailViewModel
+        private var data: Domain.GameEntity?
+        
+        var gameId: Int?
+        
+        init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, viewModel: GameDetailViewModel) {
+            self.viewModel = viewModel
             super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         }
         
@@ -43,6 +52,65 @@ extension Presentation.UiKit {
             // TODO: Add Favorite Button Tapped
             print("favorite button tapped")
         }
+        
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+
+            subscribeViewModel()
+        }
+        
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            if let gameId = gameId {
+                showActivityIndicator()
+                viewModel.getGameDetail(byId: String(gameId))
+            }
+        }
+        
+        private func subscribeViewModel() {
+            viewModel.errors
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                    onNext: { [weak self] error in
+                        guard let self = self else {
+                            return
+                        }
+                        self.hideActivityIndicator()
+                        self.handleError(error)
+                    }
+                )
+                .disposed(by: vmBag)
+            viewModel
+                .gameData
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                    onNext: { [weak self] game in
+                        guard let self = self else {
+                            return
+                        }
+                        self.hideActivityIndicator()
+                        self.populateData(game)
+                    }
+                )
+                .disposed(by: vmBag)
+        }
+    }
+}
+
+// MARK: Function
+private extension Presentation.UiKit.GameDetailViewController {
+    func populateData(_ data: Domain.GameEntity) {
+        self.data = data
+        lbRate?.attributedText = generateRateLabelText(rate: data.rating)
+        let url = URL(string: data.backgroundImage)
+        ivContent?.sd_setImage(with: url)
+        lbTitle?.text = data.name
+        lbReleaseDate?.text = "Release date \(data.released)"
+        lbCount?.attributedText = generateCountLabelText(count: data.suggestionsCount)
+        let textDescription = data.description
+        let str = textDescription.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        lbContent?.text = str
+        
     }
 }
 
@@ -121,11 +189,13 @@ private extension Presentation.UiKit.GameDetailViewController {
         }
         
         self.vwContainer = vwContainer
+        self.ivContent = ivContent
         self.lbDeveloper = lbDeveloper
         self.lbTitle = lbTitle
         self.lbReleaseDate = lbReleaseDate
         self.lbRate = lbRate
         self.lbCount = lbCount
+        self.lbContent = lbContent
     }
     
     func setupBaseView() {
@@ -152,9 +222,6 @@ private extension Presentation.UiKit.GameDetailViewController {
     func generateContentImageView() -> UIImageView {
         let view = UIImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        let url = URL(string: "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg")
-        view.sd_setImage(with: url)
         return view
     }
     
@@ -163,7 +230,6 @@ private extension Presentation.UiKit.GameDetailViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         view.textColor = .darkText
-        view.text = "Portal 2"
         view.numberOfLines = 0
         view.textAlignment = .left
         return view
@@ -174,7 +240,6 @@ private extension Presentation.UiKit.GameDetailViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFont(ofSize: 16, weight: .light)
         view.textColor = .darkText.withAlphaComponent(0.7)
-        view.text = "Rockstar Games"
         view.numberOfLines = 0
         view.textAlignment = .left
         return view
@@ -185,7 +250,6 @@ private extension Presentation.UiKit.GameDetailViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFont(ofSize: 14, weight: .light)
         view.textColor = .darkText.withAlphaComponent(0.6)
-        view.text = "Release date 2021-08-20"
         view.numberOfLines = 0
         view.textAlignment = .left
         return view
@@ -196,7 +260,6 @@ private extension Presentation.UiKit.GameDetailViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFont(ofSize: 12, weight: .light)
         view.textColor = .darkText.withAlphaComponent(0.7)
-        view.text = "Release date 2021-08-20"
         view.numberOfLines = 0
         view.textAlignment = .left
         return view
@@ -207,9 +270,6 @@ private extension Presentation.UiKit.GameDetailViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         view.textColor = .darkText
-        var test = "<p>Portal 2 is a first-person puzzle game developed by Valve Corporation and released on April 19, 2011 on Steam, PS3 and Xbox 360. It was published by Valve Corporation in digital form and by Electronic Arts in physical form. </p>\n<p>Its plot directly follows the first game&#39;s, taking place in the Half-Life universe. You play as Chell, a test subject in a research facility formerly ran by the company Aperture Science, but taken over by an evil AI that turned upon its creators, GladOS. After defeating GladOS at the end of the first game but failing to escape the facility, Chell is woken up from a stasis chamber by an AI personality core, Wheatley, as the unkempt complex is falling apart. As the two attempt to navigate through the ruins and escape, they stumble upon GladOS, and accidentally re-activate her...</p>\n<p>Portal 2&#39;s core mechanics are very similar to the first game&#39;s ; the player must make their way through several test chambers which involve puzzles. For this purpose, they possess a Portal Gun, a weapon capable of creating teleportation portals on white surfaces. This seemingly simple mechanic and its subtleties coupled with the many different puzzle elements that can appear in puzzles allows the game to be easy to start playing, yet still feature profound gameplay. The sequel adds several new puzzle elements, such as gel that can render surfaces bouncy or allow you to accelerate when running on them.</p>\n<p>The game is often praised for its gameplay, its memorable dialogue and writing and its aesthetic. Both games in the series are responsible for inspiring most puzzle games succeeding them, particularly first-person puzzle games. The series, its characters and even its items such as the portal gun and the companion cube have become a cultural icon within gaming communities.</p>\n<p>Portal 2 also features a co-op mode where two players take on the roles of robots being led through tests by GladOS, as well as an in-depth level editor.</p>"
-        let str = test.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-        view.text = str.quoteEscape()
         view.numberOfLines = 0
         view.textAlignment = .left
         return view
@@ -219,8 +279,6 @@ private extension Presentation.UiKit.GameDetailViewController {
 // MARK: VIEW
 private extension Presentation.UiKit.GameDetailViewController {
     func initView() {
-        lbRate?.attributedText = generateRateLabelText(rate: "4.5")
-        lbCount?.attributedText = generateCountLabelText(count: "200")
         initNavigationRightButton()
     }
     

@@ -61,8 +61,10 @@ private extension Presentation.UiKit.MainTabViewController {
 // MARK: DESIGN
 private extension Presentation.UiKit.MainTabViewController {
     func createHomeViewController() -> UIViewController {
+        guard let vc = (UIApplication.shared.delegate as? ProvideViewControllerResolver)?.vcResolver.instantiateHomeViewController().get() else {
+            fatalError("View Controller can't be nil: GenieSmart")
+        }
         // Create Tab one
-        let vc = Presentation.UiKit.HomeViewController(nibName: nil, bundle: nil)
         return createNavController(
                 for: vc,
                 title: "Home",
